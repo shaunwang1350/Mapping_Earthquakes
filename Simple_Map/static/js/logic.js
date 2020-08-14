@@ -1,12 +1,19 @@
 // Add console.log to check to see if our code is working.
 console.log("working");
 
-let map = L.map('mapid').setView([34.0522, -118.2437], 15);
+let map = L.map('mapid').setView([40.7,-94.5], 4);
 // let map = L.map("mapid", {center: [40.7,-94.5],zoom:4});
 
-var marker = L.marker([34.0522, -118.2437]).addTo(map);
+let cityData = cities;
 
-L.circle([34.0522, -118.2437], {radius: 300, color: 'black', fillColor: 'yellow', fillOpacity: 0.50}).addTo(map);
+cityData.forEach(function(city){
+	console.log(city);
+	L.circle(city.location, {radius: city.population/30, color: 'orange', fillColor: 'orange', fillOpacity: '0.50', lineWeight: 1}).addTo(map)
+	.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
+  	.addTo(map);
+})
+
+// L.circle([34.0522, -118.2437], {radius: 300, color: 'black', fillColor: 'yellow', fillOpacity: 0.50}).addTo(map);
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {

@@ -1,8 +1,8 @@
 // Add console.log to check to see if our code is working.
 // We create the tile layer that will be the background of our map.
-let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
-	maxZoom: 25,
+	maxZoom: 18,
 	accessToken: API_KEY
 });
 
@@ -13,13 +13,14 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 });
 
 let baseMaps = {
-	Street: streets,
-	Dark: dark
+	"Satellite Streets" : satelliteStreets,
+	// Street: streets,
+	"Dark": dark
 }
 
 let map = L.map('mapid', {
-	center: [44, -80],
-	zoom: 2,
+	center: [43.7, -79.3],
+	zoom: 11,
 	layers: [dark]
 })
 
@@ -88,6 +89,8 @@ let airportData = "https://raw.githubusercontent.com/shaunwang1350/Mapping_Earth
 
 let torontoData = "https://raw.githubusercontent.com/shaunwang1350/Mapping_Earthquakes/master/torontoRoutes.json";
 
+let torontoHoods = "https://raw.githubusercontent.com/shaunwang1350/Mapping_Earthquakes/master/torontoNeighborhoods.json";
+
 d3.json(airportData).then(function(data){
 	console.log(data);
 	L.geoJSON(data).addTo(map);
@@ -107,6 +110,23 @@ d3.json(torontoData).then(function(data){
 		}
 	}).addTo(map);
 });
+
+let myStyle2 = {
+	color: 'blue',
+	weight: 1,
+	fillColor: 'yellow',
+	fillOpacity: 0.50
+}
+
+d3.json(torontoHoods).then(function(data){
+	console.log(data);
+	L.geoJSON(data, {
+		style: myStyle2,
+		onEachFeature: function(feature, layer){
+			layer.bindPopup("<h3> Neighborhood: " + feature.properties.AREA_NAME)
+		}
+	}).addTo(map);
+})
 
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);

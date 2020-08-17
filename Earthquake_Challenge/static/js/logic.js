@@ -126,12 +126,6 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
 
 let plateBoundaries = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
 
-let plateOrogens = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_orogens.json";
-
-let platePlates = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
-
-let plateSteps = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_steps.json";
-
 d3.json(plateBoundaries).then(function(data){
 	console.log(data);
 
@@ -140,7 +134,7 @@ d3.json(plateBoundaries).then(function(data){
 		  opacity: 1,
 		  fillColor: 'orange',
 		  color: 'orange',
-		  weight: 0.95
+		  weight: 0.98
 		};
 	};
 

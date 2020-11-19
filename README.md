@@ -1,4 +1,4 @@
-# Mapping_Earthquakes
+# Mapping Earthquakes with MapBox
 
 ![Developement](https://img.shields.io/badge/progress-complete-green)
 ![reposize](https://img.shields.io/github/repo-size/shaunwang1350/Mapping_Earthquakes)

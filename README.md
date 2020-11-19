@@ -6,7 +6,7 @@
 ![githubfollows](https://img.shields.io/github/followers/shaunwang1350?style=social)
 <br >
 
-![image](project1.png)
+![image](project.png)
 ** Note: Open Earthquake_Challenge/Index.html **
 
 ### Basic Project Plan

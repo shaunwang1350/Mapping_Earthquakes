@@ -1,9 +1,20 @@
 # Mapping_Earthquakes
 
+![Developement](https://img.shields.io/badge/progress-complete-green)
+![reposize](https://img.shields.io/github/repo-size/shaunwang1350/CreditLoans_MachineLearning)
+![commit](https://img.shields.io/github/last-commit/shaunwang1350/CreditLoans_MachineLearning)
+![githubfollows](https://img.shields.io/github/followers/shaunwang1350?style=social)
+<br >
+
 Note: Open Earthquake_Challenge/Index.html
 
 ### Basic Project Plan
 The purpose of this project is to visually show the differences between the magnitudes of earthquakes all over the world for the last seven days.
+
+### Technologies Used:
+* JavaScript
+* D3
+* MapBox
 
 ### Tasks
 To complete this project, I used a URL for GeoJSON earthquake data from the USGS website and retrieved geographical coordinates and the magnitudes of earthquakes for the last seven days. Then add the data to a map.

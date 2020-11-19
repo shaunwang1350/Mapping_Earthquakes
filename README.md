@@ -6,6 +6,7 @@
 ![githubfollows](https://img.shields.io/github/followers/shaunwang1350?style=social)
 <br >
 
+### Demo Screenshot:
 ![image](project.png)
 ** Note: Open Earthquake_Challenge/Index.html **
 
